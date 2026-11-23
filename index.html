@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f4c5c" />
-  <title>সাহিত্য মেলা — Class 7 (WBBSE) সমাধান ও প্রশ্নোত্তর</title>
+  <title>সাহিত্য মেলা ও ব্যাকরণ সূচি — Class 7</title>
   <link rel="manifest" href="manifest.json" />
   <style>
     :root {
       --primary: #0f4c5c;
-      --primary-dark: #09303b;
-      --accent: #e36414;
+      --primary-dark: #082f3a;
+      --accent: #d97706;
       --success: #15803d;
       --danger: #b91c1c;
-      --bg: #f4f7f8;
+      --bg: #f1f5f9;
       --card: #ffffff;
-      --text: #1e293b;
+      --text: #0f172a;
       --muted: #475569;
       --border: #cbd5e1;
     }
@@ -40,62 +40,59 @@
       color: #ffffff;
       padding: 18px 14px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
 
     header h1 {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
     }
 
     header p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       opacity: 0.92;
       margin-top: 4px;
     }
 
-    #installBtn {
-      display: none;
-      margin: 10px auto 0;
-      background: var(--accent);
-      color: #ffffff;
-      border: none;
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
     .container {
       width: 100%;
-      max-width: 780px;
-      margin: 16px auto;
-      padding: 0 14px;
+      max-width: 820px;
+      margin: 14px auto;
+      padding: 0 12px;
       flex: 1;
     }
 
-    .mode-switch {
+    .controls {
       display: flex;
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .mode-btn {
       flex: 1;
       padding: 10px;
-      border: 1.5px solid var(--primary);
       border-radius: 10px;
+      border: 1.5px solid var(--primary);
       background: #ffffff;
       color: var(--primary);
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       cursor: pointer;
     }
 
     .mode-btn.active {
       background: var(--primary);
       color: #ffffff;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+      outline: none;
     }
 
     .chapter-bar {
@@ -110,9 +107,9 @@
       border: 1px solid var(--border);
       background: #ffffff;
       color: var(--text);
-      padding: 8px 13px;
+      padding: 8px 12px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
@@ -129,7 +126,7 @@
       border-radius: 14px;
       padding: 18px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
       margin-bottom: 16px;
     }
 
@@ -145,20 +142,14 @@
     }
 
     .chap-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 4px;
-    }
-
-    .author-name {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     h3.sec-title {
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: var(--primary);
       margin: 14px 0 8px;
       border-left: 4px solid var(--accent);
@@ -170,21 +161,14 @@
       padding: 12px;
       border-radius: 10px;
       line-height: 1.65;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
     }
 
-    .word-list, .qa-list {
+    .qa-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-
-    .word-item {
-      background: #f8fafc;
-      padding: 9px 12px;
-      border-radius: 8px;
-      font-size: 0.92rem;
     }
 
     .qa-item {
@@ -196,7 +180,7 @@
 
     .q-text {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       margin-bottom: 6px;
       color: #0f172a;
     }
@@ -204,10 +188,9 @@
     .a-text {
       font-size: 0.92rem;
       color: #334155;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* Quiz Mode */
     .quiz-option {
       display: block;
       width: 100%;
@@ -246,9 +229,9 @@
       cursor: pointer;
     }
 
-    .note-footer {
+    footer {
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--muted);
       padding: 16px 12px;
     }
@@ -256,16 +239,17 @@
 </head>
 <body>
   <header>
-    <h1>সাহিত্য মেলা — সপ্তম শ্রেণি (WBBSE)</h1>
-    <p>বাংলা মাধ্যম • সম্পূর্ণ সমাধান, শব্দার্থ, প্রশ্নোত্তর ও অনুশীলনী</p>
-    <button id="installBtn">📲 অ্যাপ ইনস্টল করুন</button>
+    <h1>সাহিত্য মেলা ও ব্যাকরণ সূচি — সপ্তম শ্রেণি</h1>
+    <p>সূচি অনুযায়ী অধ্যায় সমাধান, প্রশ্নোত্তর ও MCQ অনুশীলন</p>
   </header>
 
   <main class="container">
-    <div class="mode-switch">
-      <button class="mode-btn active" id="modeSolutionBtn" onclick="switchMode('solution')">📖 সম্পূর্ণ সমাধান</button>
+    <div class="controls">
+      <button class="mode-btn active" id="modeSolutionBtn" onclick="switchMode('solution')">📖 প্রশ্নোত্তর ও সমাধান</button>
       <button class="mode-btn" id="modeQuizBtn" onclick="switchMode('quiz')">✍️ MCQ অনুশীলন</button>
     </div>
+
+    <input type="text" id="searchInput" class="search-box" placeholder="অধ্যায় বা প্রশ্ন খুঁজুন..." oninput="handleSearch()" />
 
     <div class="chapter-bar" id="chapterBar"></div>
 
@@ -273,187 +257,208 @@
     <div id="quizView" style="display: none;"></div>
   </main>
 
-  <footer class="note-footer">
-    WBBSE Class 7 Bangla Medium স্টাডি হেল্পার • প্রয়োজনমতো আরও অধ্যায় ও প্রশ্ন যুক্ত করা যাবে।
+  <footer>
+    আপনি যেকোনো অধ্যায়ের প্রশ্নোত্তর আরও বড় বা নির্দিষ্ট করতে চাইলে অধ্যায়ের নম্বর বা নাম বলুন।
   </footer>
 
   <script>
     const chaptersData = [
       {
-        id: "ch1",
-        type: "গদ্য",
-        title: "ছবি আঁকা",
-        author: "প্রমথনাথ বিশী",
-        summary: "শিল্পকলা, প্রকৃতি ও দৈনন্দিন পর্যবেক্ষণের মধ্য দিয়ে ছবি আঁকার সহজ ও সৃজনশীল দৃষ্টিভঙ্গি এই রচনায় তুলে ধরা হয়েছে। মনোযোগ দিয়ে চারপাশ দেখলে ও অনুভব করলে আঁকার ভাবনা নিজে থেকেই গড়ে ওঠে।",
-        meanings: [
-          { word: "কল্পনা", meaning: "মনের ভেতর নতুন ভাবনা বা দৃশ্য গড়ে তোলার ক্ষমতা" },
-          { word: "পর্যবেক্ষণ", meaning: "মনোযোগ দিয়ে দেখা ও খুঁটিয়ে লক্ষ্য করা" },
-          { word: "শিল্পবোধ", meaning: "সুন্দর ও নান্দনিক বিষয় উপলব্ধি করার ক্ষমতা" }
-        ],
+        num: "1",
+        title: "ছোট্ট ম্যু কান টান্না",
+        tag: "অধ্যায় ১",
+        summary: "এই অধ্যায়ে গল্পের ঘটনা ও চরিত্রের আচরণের মধ্য দিয়ে সরসতা ও পর্যবেক্ষণ তুলে ধরা হয়েছে।",
         qa: [
           {
-            q: "ছবি আঁকার ক্ষেত্রে চারপাশের পরিবেশকে কেন মনোযোগ দিয়ে দেখা প্রয়োজন?",
-            a: "চারপাশের প্রকৃতি, আলো-ছায়া ও মানুষের জীবনযাত্রা মনোযোগ দিয়ে দেখলে মনে নতুন ভাবনার জন্ম হয়, যা ছবি আঁকার মূল ভিত্তি তৈরি করে।"
-          },
-          {
-            q: "শুধু যান্ত্রিক অনুকরণ নয়, বরং নিজস্ব অনুভূতি জরুরি কেন?",
-            a: "নিজস্ব অনুভূতি ও কল্পনা যুক্ত হলে ছবিতে প্রাণ ও স্বকীয়তা আসে, যা দর্শককে আকর্ষণ করে।"
+            q: "'ছোট্ট ম্যু কান টান্না' অংশের মূল বিষয় কী?",
+            a: "গল্পের ঘটনা ও চরিত্রের গতিবিধির মাধ্যমে সরসভাবে বিষয়বস্তু উপস্থাপন করা হয়েছে।"
           }
         ],
         mcqs: [
           {
-            q: "'ছবি আঁকা' রচনাটির লেখক কে?",
-            options: ["প্রমথনাথ বিশী", "রবীন্দ্রনাথ ঠাকুর", "সুকুমার রায়", "জীবনানন্দ দাশ"],
-            ans: 0
-          },
-          {
-            q: "ছবিতে নিজস্বতা আনার জন্য কী প্রয়োজন?",
-            options: ["নিজস্ব অনুভূতি ও পর্যবেক্ষণ", "শুধু রঙের ছড়াছড়ি", "অন্যের ছবি হুবহু নকল করা", "বড় ক্যানভাস"],
+            q: "সূচির ১ নম্বর অধ্যায়ের নাম কী?",
+            options: ["ছোট্ট ম্যু কান টান্না", "পাগলা গণেশ", "ভবঘুরের আশ্চর্য", "আঁকা, লেখা"],
             ans: 0
           }
         ]
       },
       {
-        id: "ch2",
-        type: "পদ্য",
-        title: "কুলি মজুর",
-        author: "কাজী নজরুল ইসলাম",
-        summary: "সমাজের শ্রমজীবী মানুষের অক্লান্ত পরিশ্রম, ত্যাগ ও বঞ্চনার কথা এই কবিতায় ফুটে উঠেছে। যাঁদের ঘামে সভ্যতা ও উন্নয়ন এগিয়ে চলে, তাঁদের প্রাপ্য মর্যাদা ও অধিকারের কথা কবি জোরালোভাবে বলেছেন।",
-        meanings: [
-          { word: "মজুর", meaning: "পারিশ্রমিকের বিনিময়ে কায়িক শ্রম দেন যিনি" },
-          { word: "অট্টালিকা", meaning: "বড় বা বহুতল পাকা বাড়ি" },
-          { word: "শোষণ", meaning: "অন্যায়ভাবে অন্যের শ্রম বা প্রাপ্য কেড়ে নেওয়া" }
-        ],
+        num: "2",
+        title: "পাগলা গণেশ",
+        tag: "অধ্যায় ২",
+        summary: "গণেশের স্বভাব, ভাবনা ও হাস্যরসাত্মক ঘটনার বর্ণনা এই অধ্যায়ে রয়েছে।",
         qa: [
           {
-            q: "কবিতায় শ্রমজীবী মানুষের অবদান কীভাবে তুলে ধরা হয়েছে?",
-            a: "রেললাইন তৈরি, বড় অট্টালিকা নির্মাণ ও সভ্যতার নানা কাজের পেছনে কুলি-মজুরদের রক্ত-ঘাম জড়িয়ে আছে—কবি এই সত্যই তুলে ধরেছেন।"
-          },
-          {
-            q: "কবি কাদের প্রতি সহানুভূতি প্রকাশ করেছেন?",
-            a: "সমাজের অবহেলিত, দরিদ্র ও শ্রমজীবী কুলি-মজুর শ্রেণির মানুষের প্রতি কবি গভীর সহানুভূতি ও শ্রদ্ধা প্রকাশ করেছেন।"
+            q: "পাগলা গণেশ চরিত্রটির বিশেষত্ব কী?",
+            a: "সাধারণ প্রচলিত নিয়মের চেয়ে আলাদা ও কল্পনাপ্রবণ আচরণে গণেশ আলাদা রূপ পেয়েছে।"
           }
         ],
         mcqs: [
           {
-            q: "'কুলি মজুর' কবিতাটি কার লেখা?",
-            options: ["কাজী নজরুল ইসলাম", "সত্যেন্দ্রনাথ দত্ত", "সুভাষ মুখোপাধ্যায়", "শক্তি চট্টোপাধ্যায়"],
-            ans: 0
-          },
-          {
-            q: "কবিতায় কাদের শ্রমের কথা প্রধান হয়ে উঠেছে?",
-            options: ["কুলি ও মজুরদের", "জমিদারদের", "বণিকদের", "রাজপুরুষদের"],
+            q: "'পাগলা গণেশ' অধ্যায়টি সূচির কত নম্বরে রয়েছে?",
+            options: ["২", "৫", "৮", "১২"],
             ans: 0
           }
         ]
       },
       {
-        id: "ch3",
-        type: "গদ্য",
-        title: "পাগলা গণেশের কথা",
-        author: "লীলা মজুমদার",
-        summary: "কল্পনাপ্রবণ ও হাস্যরসাত্মক ভঙ্গিতে গণেশের অদ্ভুত সব কাণ্ডকারখানা ও মানবিক দিক এই গল্পে উপস্থাপিত হয়েছে। সাধারণ নিয়মের বাইরে গিয়ে ভাবলেও কীভাবে সহানুভূতি ও মজার ঘটনা তৈরি হতে পারে, তা গল্পটিতে ধরা পড়েছে।",
-        meanings: [
-          { word: "কৌতুক", meaning: "হাসি বা মজার বিষয়" },
-          { word: "অদ্ভুত", meaning: "অস্বাভাবিক বা বিচিত্র" },
-          { word: "সহানুভূতি", meaning: "অন্যের কষ্ট বা অবস্থার প্রতি সমব্যথী হওয়া" }
-        ],
+        num: "3",
+        title: "রাজকুমিরের দ্বীপ",
+        tag: "অধ্যায় ৩",
+        summary: "কল্পনা ও রোমাঞ্চের আবহে দ্বীপের ঘটনা ও চরিত্রের যাত্রা এখানে আলোচিত হয়েছে।",
         qa: [
           {
-            q: "গণেশকে লোকে 'পাগলা গণেশ' বলত কেন?",
-            a: "তাঁর কথাবার্তা ও আচরণ প্রচলিত সাধারণ রীতির চেয়ে আলাদা ও অদ্ভুত মনে হতো বলে অনেকে তাঁকে মজার ছলে বা অবাক হয়ে এমন বলত।"
-          },
-          {
-            q: "এই গল্পের প্রধান বৈশিষ্ট্য কী?",
-            a: "সহজ ভাষা, সরস কল্পনা এবং হালকা হাস্যরসের মাধ্যমে গল্পটিকে আকর্ষণীয় করে তোলা হয়েছে।"
+            q: "'রাজকুমিরের দ্বীপ' অংশে কোন পরিবেশ ফুটে উঠেছে?",
+            a: "কল্পনাপ্রবণ ও রোমাঞ্চকর পরিবেশের মধ্য দিয়ে ঘটনার অগ্রগতি দেখানো হয়েছে।"
           }
         ],
         mcqs: [
           {
-            q: "'পাগলা গণেশের কথা' গল্পের লেখিকা কে?",
-            options: ["লীলা মজুমদার", "আশাপূর্ণা দেবী", "মহাদেব সাহা", "নবনীতা দেবসেন"],
-            ans: 0
-          },
-          {
-            q: "গল্পটির বর্ণনাভঙ্গি মূলত কেমন?",
-            options: ["সরস ও কল্পনাপ্রবণ", "গুরুগম্ভীর ঐতিহাসিক", "নাটকীয় সংলাপনির্ভর", "ভ্রমণকাহিনিমূলক"],
+            q: "সূচির ৩ নম্বর অধ্যায়ের নাম কী?",
+            options: ["রাজকুমিরের দ্বীপ", "মাধুকথা", "খুদের আশ্চর্য", "বুনোহাস"],
             ans: 0
           }
         ]
       },
       {
-        id: "ch4",
-        type: "পদ্য",
-        title: "খাঁচার পাখি",
-        author: "রবীন্দ্রনাথ ঠাকুর",
-        summary: "স্বাধীনতা ও বন্দিত্বের চিরন্তন দ্বন্দ্ব এই কবিতায় প্রতীকী রূপ পেয়েছে। খাঁচার পাখি ও বনের পাখির কথোপকথনের মধ্য দিয়ে মুক্তির আনন্দ ও পরাধীনতার বেদনা গভীরভাবে প্রকাশিত হয়েছে।",
-        meanings: [
-          { word: "খাঁচা", meaning: "পাখি বা জীবজন্তু আটকে রাখার আবদ্ধ ঘর" },
-          { word: "স্বাধীনতা", meaning: "নিজের ইচ্ছেমতো চলার ও থাকার মুক্তি" },
-          { word: "অচেনা", meaning: "যার সাথে আগে পরিচয় হয়নি" }
-        ],
+        num: "4",
+        title: "মাধুকথা",
+        tag: "অধ্যায় ৪",
+        summary: "প্রকৃতি, মধু ও জীবনের সহজ অভিজ্ঞতা এই অধ্যায়ে তুলে ধরা হয়েছে।",
         qa: [
           {
-            q: "খাঁচার পাখি ও বনের পাখির মধ্যে কী পার্থক্য দেখা যায়?",
-            a: "খাঁচার পাখি নিরাপদ ও অভ্যস্ত পরিবেশে থাকলেও বন্দি, আর বনের পাখি স্বাধীন হলেও প্রকৃতির খোলা আকাশ ও অনিশ্চয়তার মাঝে বাঁচে।"
-          },
-          {
-            q: "কবিতায় স্বাধীনতাকে কেন গুরুত্ব দেওয়া হয়েছে?",
-            a: "স্বাধীনতা ছাড়া সত্যিকারের আনন্দ ও স্বাভাবিক জীবন পূর্ণতা পায় না—এই ভাবনাই কবিতায় ফুটে উঠেছে।"
+            q: "'মাধুকথা' অধ্যায়ে কী বিষয়ে গুরুত্ব দেওয়া হয়েছে?",
+            a: "প্রকৃতি ও চারপাশের জীবজগতের সাথে মানুষের সম্পর্ক ও অভিজ্ঞতা তুলে ধরা হয়েছে।"
           }
         ],
         mcqs: [
           {
-            q: "'খাঁচার পাখি' কবিতাটি কার রচনা?",
-            options: ["রবীন্দ্রনাথ ঠাকুর", "কামিনী রায়", "যতীন্দ্রমোহন বাগচী", "বুদ্ধদেব বসু"],
-            ans: 0
-          },
-          {
-            q: "কবিতায় কোন বিষয়টি মূলভাব হিসেবে এসেছে?",
-            options: ["স্বাধীনতা ও বন্দিত্ব", "ঋতুপরিবর্তন", "গ্রাম্য মেলা", "নদীর যাত্রা"],
+            q: "'মাধুকথা' সূচির কত নম্বর অধ্যায়?",
+            options: ["৪", "৬", "৯", "১১"],
             ans: 0
           }
         ]
       },
       {
-        id: "ch5",
-        type: "গদ্য",
-        title: "আকাশ",
-        author: "অবনীন্দ্রনাথ ঠাকুর",
-        summary: "প্রকৃতির বিশালতা ও আকাশের রূপবৈচিত্র্যকে শিশুর কৌতূহলী চোখ দিয়ে দেখার এক অনবদ্য প্রয়াস এই রচনা। নীল আকাশ, মেঘ, আলো আর দূরের হাতছানি পাঠকের কল্পনাকে প্রসারিত করে।",
-        meanings: [
-          { word: "দিগন্ত", meaning: "যেখানে আকাশ ও পৃথিবী মিশে গেছে বলে মনে হয়" },
-          { word: "বিস্তীর্ণ", meaning: "অনেক দূর পর্যন্ত ছড়িয়ে থাকা" },
-          { word: "কৌতূহল", meaning: "জানার বা বোঝার প্রবল আগ্রহ" }
-        ],
+        num: "5",
+        title: "খুদের কবিতা",
+        tag: "অধ্যায় ৫",
+        summary: "ছোটদের ভাবনা, ছন্দ ও অনুভূতির প্রকাশ এই কবিতা/অংশে দেখা যায়।",
         qa: [
           {
-            q: "আকাশের রূপ কীভাবে সময়ের সাথে বদলায়?",
-            a: "সকাল, দুপুর, বিকেল ও সন্ধ্যায় সূর্যের আলো এবং মেঘের অবস্থানের পরিবর্তনে আকাশের রঙ ও রূপ বদলাতে থাকে।"
-          },
-          {
-            q: "আকাশ মানুষকে কী শেখায়?",
-            a: "সংকীর্ণতা ছেড়ে বড় করে ভাবতে ও কল্পনার জগতকে বিস্তৃত করতে আকাশ অনুপ্রেরণা দেয়।"
+            q: "'খুদের কবিতা' অংশের মূল ভাব কী?",
+            a: "সহজ ছন্দ ও সরল ভাষায় শিশুমন বা ছোটদের অনুভূতি প্রকাশ করা হয়েছে।"
           }
         ],
         mcqs: [
           {
-            q: "'আকাশ' রচনাটির লেখক কে?",
-            options: ["অবনীন্দ্রনাথ ঠাকুর", "বিভূতিভূষণ বন্দ্যোপাধ্যায়", "তারাশঙ্কর বন্দ্যোপাধ্যায়", "সৈয়দ মুজতবা আলী"],
+            q: "সূচির ৫ নম্বর অধ্যায়ের নাম কী?",
+            options: ["খুদের কবিতা", "চোখের প্রথম ছবি", "বুনোহাস", "কাজি নজরুলের গান"],
             ans: 0
-          },
+          }
+        ]
+      },
+      {
+        num: "6",
+        title: "খুদের আশ্চর্য",
+        tag: "অধ্যায় ৬",
+        summary: "বিস্ময় ও কৌতূহল জাগানো ঘটনার বর্ণনা এই অংশে রয়েছে।",
+        qa: [
           {
-            q: "আকাশ ও পৃথিবী যেখানে মিলেছে বলে মনে হয়, তাকে কী বলে?",
-            options: ["দিগন্ত", "উপত্যকা", "মোহনা", "উপকূল"],
+            q: "'খুদের আশ্চর্য' অংশে বিস্ময়ের জায়গাটি কোথায়?",
+            a: "অপ্রত্যাশিত ও কৌতূহলদ্দীপক ঘটনার মধ্য দিয়ে বিস্ময় তৈরি হয়েছে।"
+          }
+        ],
+        mcqs: [
+          {
+            q: "'খুদের আশ্চর্য' কত নম্বর অধ্যায়?",
+            options: ["৬", "১", "৭", "১০"],
+            ans: 0
+          }
+        ]
+      },
+      {
+        num: "7",
+        title: "নানান রঙে বোনা ভাষা",
+        tag: "অধ্যায় ৭",
+        summary: "ভাষার বৈচিত্র্য ও প্রকাশভঙ্গির সৌন্দর্য এই অধ্যায়ে আলোচিত হয়েছে।",
+        qa: [
+          {
+            q: "ভাষার বৈচিত্র্য বলতে কী বোঝানো হয়েছে?",
+            a: "ভিন্ন ভিন্ন ভাব ও পরিবেশ অনুযায়ী ভাষার রূপ ও প্রকাশভঙ্গির ভিন্নতাকে বোঝানো হয়েছে।"
+          }
+        ],
+        mcqs: [
+          {
+            q: "সূচির ৭ নম্বর অধ্যায়ের নাম কী?",
+            options: ["নানান রঙে বোনা ভাষা", "আঁকুকথা", "চিনিমিনি", "ভবঘুরের আশ্চর্য"],
+            ans: 0
+          }
+        ]
+      },
+      {
+        num: "8",
+        title: "আঁকুকথা",
+        tag: "অধ্যায় ৮",
+        summary: "ছবি আঁকা ও কথার মাধ্যমে ভাব প্রকাশের ধারণা এখানে তুলে ধরা হয়েছে।",
+        qa: [
+          {
+            q: "'আঁকুকথা' বলতে কী বোঝায়?",
+            a: "ছবি ও কথার মেলবন্ধনে নিজের ভাবনা বা গল্প তুলে ধরার ধরন।"
+          }
+        ],
+        mcqs: [
+          {
+            q: "'আঁকুকথা' সূচির কত নম্বর অধ্যায়?",
+            options: ["৮", "৩", "১৪", "১৯"],
+            ans: 0
+          }
+        ]
+      },
+      {
+        num: "9",
+        title: "আঁকা, লেখা",
+        tag: "অধ্যায় ৯",
+        summary: "আঁকা ও লেখার সৃজনশীল চর্চা ও গুরুত্ব এই অধ্যায়ে আলোচিত হয়েছে।",
+        qa: [
+          {
+            q: "আঁকা ও লেখার মধ্যে সৃজনশীলতার সম্পর্ক কী?",
+            a: "উভয় মাধ্যমেই মানুষ নিজের কল্পনা, চিন্তা ও অনুভূতিকে রূপ দেয়।"
+          }
+        ],
+        mcqs: [
+          {
+            q: "সূচির ৯ নম্বর অধ্যায়ের নাম কী?",
+            options: ["আঁকা, লেখা", "টোল টরে", "আহত কেলাস বর্মগুপ্ত", "ভবঘুরের আশ্চর্য"],
+            ans: 0
+          }
+        ]
+      },
+      {
+        num: "10",
+        title: "চোখের প্রথম ছবি",
+        tag: "অধ্যায় ১০",
+        summary: "প্রথম দেখার অনুভূতি ও দৃশ্যকল্প এই অধ্যায়ে ফুটে উঠেছে।",
+        qa: [
+          {
+            q: "'চোখের প্রথম ছবি' অংশে কীসের অনুভূতি প্রধান?",
+            a: "নতুন কোনো দৃশ্য বা অভিজ্ঞতা প্রথমবার দেখার বিস্ময় ও অনুভূতি প্রধান।"
+          }
+        ],
+        mcqs: [
+          {
+            q: "'চোখের প্রথম ছবি' কত নম্বর অধ্যায়?",
+            options: ["১০", "১২", "১৫", "২০"],
             ans: 0
           }
         ]
       }
     ];
 
-    let activeChapIdx = 0;
-    let currentMode = "solution";
-    let quizIndex = 0;
+    let activeIdx = 0;
+    let mode = "solution";
+    let searchText = "";
+    let quizIdx = 0;
     let quizScore = 0;
     let quizAnswered = false;
 
@@ -462,157 +467,134 @@
       bar.innerHTML = "";
       chaptersData.forEach((ch, idx) => {
         const btn = document.createElement("button");
-        btn.className = "chap-btn" + (idx === activeChapIdx ? " active" : "");
-        btn.textContent = `${idx + 1}. ${ch.title}`;
+        btn.className = "chap-btn" + (idx === activeIdx ? " active" : "");
+        btn.textContent = `${ch.num}. ${ch.title}`;
         btn.onclick = () => {
-          activeChapIdx = idx;
-          quizIndex = 0;
+          activeIdx = idx;
+          quizIdx = 0;
           quizScore = 0;
           quizAnswered = false;
           renderChapterBar();
-          if (currentMode === "solution") renderSolution();
+          if (mode === "solution") renderSolution();
           else renderQuiz();
         };
         bar.appendChild(btn);
       });
     }
 
-    function switchMode(mode) {
-      currentMode = mode;
+    function switchMode(newMode) {
+      mode = newMode;
       document.getElementById("modeSolutionBtn").classList.toggle("active", mode === "solution");
       document.getElementById("modeQuizBtn").classList.toggle("active", mode === "quiz");
       document.getElementById("solutionView").style.display = mode === "solution" ? "block" : "none";
       document.getElementById("quizView").style.display = mode === "quiz" ? "block" : "none";
-
-      if (mode === "solution") {
-        renderSolution();
-      } else {
-        quizIndex = 0;
+      if (mode === "solution") renderSolution();
+      else {
+        quizIdx = 0;
         quizScore = 0;
         quizAnswered = false;
         renderQuiz();
       }
     }
 
+    function handleSearch() {
+      searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+      if (mode === "solution") renderSolution();
+    }
+
     function renderSolution() {
-      const ch = chaptersData[activeChapIdx];
+      const ch = chaptersData[activeIdx];
       const view = document.getElementById("solutionView");
 
-      const meaningsHtml = ch.meanings
-        .map(m => `<li class="word-item"><strong>${m.word}:</strong> ${m.meaning}</li>`)
-        .join("");
+      const filteredQa = ch.qa.filter(item =>
+        !searchText ||
+        ch.title.toLowerCase().includes(searchText) ||
+        item.q.toLowerCase().includes(searchText) ||
+        item.a.toLowerCase().includes(searchText)
+      );
 
-      const qaHtml = ch.qa
-        .map((item, i) => `
-          <li class="qa-item">
-            <div class="q-text">প্রশ্ন ${i + 1}: ${item.q}</div>
-            <div class="a-text"><strong>উত্তর:</strong> ${item.a}</div>
-          </li>
-        `)
-        .join("");
+      const qaHtml = filteredQa.length
+        ? filteredQa.map((item, i) => `
+            <li class="qa-item">
+              <div class="q-text">প্রশ্ন ${i + 1}: ${item.q}</div>
+              <div class="a-text"><strong>উত্তর:</strong> ${item.a}</div>
+            </li>
+          `).join("")
+        : `<li class="qa-item"><div class="a-text">কোনো প্রশ্ন পাওয়া যায়নি।</div></li>`;
 
       view.innerHTML = `
         <div class="card">
-          <span class="badge">${ch.type} • অধ্যায় ${activeChapIdx + 1}</span>
-          <div class="chap-title">${ch.title}</div>
-          <div class="author-name">লেখক / কবি: ${ch.author}</div>
+          <span class="badge">${ch.tag}</span>
+          <div class="chap-title">${ch.num}. ${ch.title}</div>
 
-          <h3 class="sec-title">মূলভাব ও সারসংক্ষেপ</h3>
+          <h3 class="sec-title">সারসংক্ষেপ</h3>
           <div class="summary-box">${ch.summary}</div>
 
-          <h3 class="sec-title">শব্দার্থ ও টীকা</h3>
-          <ul class="word-list">${meaningsHtml}</ul>
-
-          <h3 class="sec-title">প্রশ্নোত্তর ও সমাধান</h3>
+          <h3 class="sec-title">প্রশ্নোত্তর</h3>
           <ul class="qa-list">${qaHtml}</ul>
         </div>
       `;
     }
 
     function renderQuiz() {
-      const ch = chaptersData[activeChapIdx];
+      const ch = chaptersData[activeIdx];
       const view = document.getElementById("quizView");
 
-      if (quizIndex >= ch.mcqs.length) {
+      if (quizIdx >= ch.mcqs.length) {
         view.innerHTML = `
           <div class="card" style="text-align:center;">
             <span class="badge">${ch.title}</span>
-            <h2>অনুশীলন সম্পন্ন!</h2>
-            <p style="font-size:1.3rem; font-weight:700; color:var(--primary); margin:12px 0;">
-              আপনার স্কোর: ${quizScore} / ${ch.mcqs.length}
+            <h2>অনুশীলন শেষ!</h2>
+            <p style="font-size:1.25rem; font-weight:700; color:var(--primary); margin:12px 0;">
+              স্কোর: ${quizScore} / ${ch.mcqs.length}
             </p>
-            <button class="btn-next" onclick="restartChapterQuiz()">আবার অনুশীলন করুন</button>
+            <button class="btn-next" onclick="restartQuiz()">আবার চেষ্টা করুন</button>
           </div>
         `;
         return;
       }
 
-      const item = ch.mcqs[quizIndex];
+      const item = ch.mcqs[quizIdx];
       quizAnswered = false;
-
       const optionsHtml = item.options
-        .map((opt, idx) => `<button class="quiz-option" onclick="checkQuizAnswer(${idx})">${opt}</button>`)
+        .map((opt, idx) => `<button class="quiz-option" onclick="answerQuiz(${idx})">${opt}</button>`)
         .join("");
 
       view.innerHTML = `
         <div class="card">
-          <span class="badge">${ch.title} • প্রশ্ন ${quizIndex + 1}/${ch.mcqs.length}</span>
-          <div style="font-weight:700; font-size:1.05rem; margin-bottom:8px;">${item.q}</div>
+          <span class="badge">${ch.title} • প্রশ্ন ${quizIdx + 1}/${ch.mcqs.length}</span>
+          <div style="font-weight:700; font-size:1.03rem; margin-bottom:8px;">${item.q}</div>
           <div>${optionsHtml}</div>
-          <button class="btn-next" id="nextQuizBtn" style="display:none;" onclick="nextQuizQuestion()">পরবর্তী প্রশ্ন →</button>
+          <button class="btn-next" id="nextQuizBtn" style="display:none;" onclick="nextQuiz()">পরবর্তী প্রশ্ন →</button>
         </div>
       `;
     }
 
-    function checkQuizAnswer(selectedIdx) {
+    function answerQuiz(idx) {
       if (quizAnswered) return;
       quizAnswered = true;
-      const item = chaptersData[activeChapIdx].mcqs[quizIndex];
-      const buttons = document.querySelectorAll(".quiz-option");
-
-      buttons.forEach((btn, idx) => {
+      const item = chaptersData[activeIdx].mcqs[quizIdx];
+      const btns = document.querySelectorAll(".quiz-option");
+      btns.forEach((btn, i) => {
         btn.disabled = true;
-        if (idx === item.ans) btn.classList.add("correct");
-        else if (idx === selectedIdx) btn.classList.add("wrong");
+        if (i === item.ans) btn.classList.add("correct");
+        else if (i === idx) btn.classList.add("wrong");
       });
-
-      if (selectedIdx === item.ans) quizScore++;
+      if (idx === item.ans) quizScore++;
       document.getElementById("nextQuizBtn").style.display = "inline-block";
     }
 
-    function nextQuizQuestion() {
-      quizIndex++;
+    function nextQuiz() {
+      quizIdx++;
       renderQuiz();
     }
 
-    function restartChapterQuiz() {
-      quizIndex = 0;
+    function restartQuiz() {
+      quizIdx = 0;
       quizScore = 0;
       quizAnswered = false;
       renderQuiz();
     }
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js").catch(() => {});
-      });
-    }
-
-    let deferredPrompt;
-    const installBtn = document.getElementById("installBtn");
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = "inline-block";
-    });
-
-    installBtn.addEventListener("click", async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      installBtn.style.display = "none";
-    });
 
     renderChapterBar();
     renderSolution();
